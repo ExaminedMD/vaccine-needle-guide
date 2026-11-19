@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaccine Needle Depth Guide | Examined</title>
+  <meta name="description" content="A patient guide for talking with the person giving your vaccine about needle length, skin technique, and arm position. Education only, not medical advice.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="https://mccormickmd.substack.com/" target="_blank" rel="noopener" class="header-link">
+      <img src="images/examined-header.png" width="1100" height="220"
+           alt="Examined: Vital and overlooked ideas your family doc might share, if only we had more time. By Ryan McCormick, M.D.">
+    </a>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Vaccine Needle Depth Guide</h1>
+      <p>Most vaccines are meant to go into muscle. If the needle stops too short, the dose can end up in fat. If it goes too deep or too high on the shoulder, it can irritate the joint lining or bone. This guide helps you talk with the person giving your shot about needle length, skin technique, and arm position.</p>
+      <p class="disclaimer-banner" role="note"><strong>For discussion and education only.</strong> This is not medical advice. The person giving your vaccine will choose the needle and technique based on what they see and feel.</p>
+    </section>
+
+    <form id="guide-form" class="card" novalidate>
+      <h2>About the person getting the shot</h2>
+
+      <div class="field">
+        <label for="name">Name or initials <span class="optional">(optional, shown only on your report)</span></label>
+        <input type="text" id="name" name="name" maxlength="60" autocomplete="off">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="ageValue">Age</label>
+          <div class="input-pair">
+            <input type="number" id="ageValue" name="ageValue" min="0" step="any" inputmode="decimal" required>
+            <select id="ageUnit" name="ageUnit" aria-label="Age unit">
+              <option value="years" selected>years</option>
+              <option value="months">months</option>
+              <option value="days">days</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="weightValue">Weight <span class="optional" id="weightHint">(needed for adults)</span></label>
+          <div class="input-pair">
+            <input type="number" id="weightValue" name="weightValue" min="0" step="any" inputmode="decimal">
+            <select id="weightUnit" name="weightUnit" aria-label="Weight unit">
+              <option value="lb" selected>lb</option>
+              <option value="kg">kg</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <fieldset class="field">
+        <legend>Sex <span class="optional">(CDC needle sizes for adults over 152 lb / 70 kg differ by sex)</span></legend>
+        <div class="radio-row">
+          <label><input type="radio" name="sex" value="female"> Female</label>
+          <label><input type="radio" name="sex" value="male"> Male</label>
+          <label><input type="radio" name="sex" value="unspecified" checked> Prefer not to say</label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="vaccine">Which vaccine?</label>
+        <select id="vaccine" name="vaccine" required>
+          <option value="" disabled selected>Choose a vaccine…</option>
+        </select>
+        <p class="help" id="vaccineHelp"></p>
+      </div>
+
+      <div id="form-errors" class="form-errors" role="alert" aria-live="assertive"></div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">Create my report</button>
+        <button type="reset" class="btn secondary" id="resetBtn">Clear</button>
+      </div>
+      <p class="privacy">Nothing you enter leaves this page. No data is stored or sent anywhere.</p>
+    </form>
+
+    <section id="report" class="report card" hidden tabindex="-1" aria-live="polite"></section>
+
+    <section class="card references">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.cdc.gov/vaccines/hcp/administration/during.html" target="_blank" rel="noopener">CDC: Vaccine Administration — During Vaccination (needle length and gauge tables)</a></li>
+        <li><a href="https://www.cdc.gov/vaccines/hcp/imz-best-practices/vaccine-administration.html" target="_blank" rel="noopener">CDC/ACIP: General Best Practices — Vaccine Administration</a></li>
+        <li><a href="https://www.cdc.gov/vaccines/vpd/vaccines-list.html" target="_blank" rel="noopener">CDC: U.S. Vaccines (routes by product)</a></li>
+        <li><a href="https://jamanetwork.com/journals/jama/article-abstract/416596" target="_blank" rel="noopener">Poland et al., JAMA 1997: deltoid fat pad thickness and needle length</a></li>
+        <li><a href="https://doi.org/10.1016/j.vaccine.2022.06.070" target="_blank" rel="noopener">Hills et al., Vaccine 2022: skin-to-deltoid distance in adults</a></li>
+        <li><a href="https://doi.org/10.1016/j.vaccine.2021.06.081" target="_blank" rel="noopener">Rahamimov et al., Vaccine 2021: injection technique and deltoid penetration</a></li>
+        <li><a href="https://doi.org/10.1542/peds.2008-1127" target="_blank" rel="noopener">Koster et al., Pediatrics 2009: needle length in early adolescents</a></li>
+        <li><a href="https://doi.org/10.1016/j.vaccine.2023.06.031" target="_blank" rel="noopener">Mardourian et al., Vaccine 2023: needle length and site choice in adults</a></li>
+        <li><a href="https://doi.org/10.17226/27746" target="_blank" rel="noopener">National Academies 2024: intramuscular vaccine administration and shoulder injuries</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>Disclaimer:</strong> This tool is for discussion and education purposes only and does not represent medical advice. It does not replace the judgment of your clinician or the person giving your vaccine. Needle recommendations follow the <a href="https://www.cdc.gov/vaccines/hcp/administration/during.html" target="_blank" rel="noopener">CDC needle length and gauge tables</a>; always follow the vaccine's package insert.</p>
+    <p>From <a href="https://mccormickmd.substack.com/" target="_blank" rel="noopener">Examined</a> by Ryan McCormick, M.D.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
